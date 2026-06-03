@@ -1,0 +1,251 @@
+:root {
+  --font-primary: 'pt sans', sans-serif;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-error: #ff5757;
+
+  --button-text: #ffffff;
+  --bg-button-primary: #756157;
+  --bg-button-secondary: #82b3d3;
+  --bg-button-selected: #7db54f;
+
+  --bg-basic: #ffffff;
+  --bg-primary: #82b3d3;
+  --bg-secondary-1: rgba(131, 179, 211, 12%);
+  --bg-secondary-2: rgba(131, 179, 211, 20%);
+
+  --icon-basic: #000000;
+  --icon-secondary: #83b3d3;
+  --icon-text: #7db54f;
+
+  --form-inputs: #3f5e72;
+  --form-elements-1: #e5e5e5;
+  --form-elements-2: #f2f2f2;
+}
+
+@font-face {
+  font-family: 'pt sans';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/ptsans-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'pt sans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/ptsans-700.woff2) format('woff2');
+}
+
+/* базовые стили */
+
+.visually-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.title--big {
+  font-size: 60px;
+  line-height: 78px;
+  text-transform: uppercase;
+}
+
+.title--medium {
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.title--small {
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.title--small-nonecase {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.title--smaller {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.subtitle {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* навигация */
+.nav__link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/* кнопки */
+.button {
+  color: var(--button-text);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  background-color: var(--bg-button-primary);
+}
+
+.button--secondary {
+  background-color: var(--bg-button-secondary);
+}
+
+.button--selected {
+  background-color: var(--bg-button-selected);
+}
+
+.button--reset {
+  background-color: transparent;
+}
+
+/* шапка мейна */
+
+.header-index {
+  background-image: url(../images/bg-header__index.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #3e4b57;
+  color: #ffffff;
+}
+
+/* преимущества */
+
+.advantages__item:nth-child(odd) {
+  background-color: var(--bg-secondary-2);
+}
+
+.advantages__item:nth-child(even) {
+  background-color: var(--bg-secondary-1);
+}
+
+.advantages__list--photo .advantages__item--photo {
+  background-color: var(--bg-button-secondary);
+  color: #ffffff;
+}
+
+.advantages__list--icon .advantages__item:nth-child(even) {
+  background-color: transparent;
+}
+
+.advantages__item--photo p {
+  color: inherit;
+}
+
+.advantages__subtitle {
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--text-secondary);
+}
+
+/* подвал */
+
+.subscribe--index {
+  background-image: url(../images/bg-mailing__index.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #3e4b57;
+  color: #ffffff;
+}
+
+.subscribe--index .subtitle {
+  color: inherit;
+}
+
+.footer__contacts-phone {
+  color: inherit;
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 1;
+}
+
+/* хлебные крошки */
+.breadcrumb__link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* фильтры */
+.filter {
+  background-image: url(../images/bg-filter.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  background-color: #2a3c46;
+}
+
+.filter__label {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+/* каталог */
+/* карточки товара */
+.card__price {
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--text-secondary);
+}
+
+.card__rating {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-secondary);
+}
+
+.pagination__link {
+  background-color: var(--bg-primary);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 36px;
+  text-decoration: none;
+}
+
+.pagination__link[aria-current] {
+  background-color: var(--form-elements-2);
+  color: var(--text-primary);
+}
+
+span.pagination__link {
+  background-color: transparent;
+  color: var(--text-primary);
+}

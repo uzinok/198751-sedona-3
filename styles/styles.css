@@ -21,6 +21,8 @@
   --form-inputs: #3f5e72;
   --form-elements-1: #e5e5e5;
   --form-elements-2: #f2f2f2;
+
+  --padding-horizontal: 70px;
 }
 
 @font-face {
@@ -41,17 +43,9 @@
 
 /* базовые стили */
 
-.visually-hidden {
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border: none;
-}
-
 body {
+  margin: 0;
+  min-width: 1200px;
   font-family: var(--font-primary);
   color: var(--text-primary);
   background-color: #f2f2f2;
@@ -63,8 +57,23 @@ img {
   object-fit: contain;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
 .section-header {
   text-align: center;
+  padding: 0 var(--padding-horizontal);
+}
+
+.block {
+  display: block;
 }
 
 /* заголовки */
@@ -107,8 +116,51 @@ img {
   color: var(--text-secondary);
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+/* шапка сайта */
+.header {
+  padding: 0 var(--padding-horizontal);
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo {
+  display: block;
+  width: fit-content;
+}
+
+.logo__images {
+  display: block;
+  width: 140px;
+}
+
+.header__links {
+  margin-left: auto;
+}
+
+.header__buttons {
+  margin-left: 20px;
+}
+
 /* навигация */
+.nav {
+  padding: 0 30px;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
 .nav__link {
+  padding: 0 16px;
   text-decoration: none;
   color: inherit;
   font-size: 20px;
@@ -118,6 +170,7 @@ img {
 
 /* кнопки */
 .button {
+  padding: 0 34px;
   color: var(--button-text);
   text-decoration: none;
   font-family: inherit;
@@ -125,6 +178,7 @@ img {
   line-height: 20px;
   font-weight: 700;
   background-color: var(--bg-button-primary);
+  text-transform: uppercase;
 }
 
 .button--secondary {
@@ -140,7 +194,6 @@ img {
 }
 
 /* шапка мейна */
-
 .header-index {
   background-image: url(../images/bg-header__index.jpg);
   background-repeat: no-repeat;
@@ -148,12 +201,33 @@ img {
   background-size: cover;
   background-color: #3e4b57;
   color: #ffffff;
+  text-align: center;
+  padding: 0 var(--padding-horizontal);
 }
 
 /* преимущества */
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 .advantages__item:nth-child(odd) {
   background-color: var(--bg-secondary-2);
+}
+
+.advantages__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 85px;
+  box-sizing: border-box;
+}
+
+.advantages__images {
+  display: block;
+  width: 800px;
+  height: 385px;
 }
 
 .advantages__item:nth-child(even) {
@@ -163,6 +237,7 @@ img {
 .advantages__list--photo .advantages__item--photo {
   background-color: var(--bg-button-secondary);
   color: #ffffff;
+  display: flex;
 }
 
 .advantages__list--icon .advantages__item:nth-child(even) {
@@ -186,11 +261,23 @@ img {
 /* кнопка на поиск */
 .search {
   text-align: center;
+  padding: 0 var(--padding-horizontal);
+}
+
+.search__button {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* подвал */
 .subscribe {
   text-align: center;
+  padding: 0 var(--padding-horizontal);
+}
+
+.subscribe__button {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .subscribe--index {
@@ -206,6 +293,18 @@ img {
   color: inherit;
 }
 
+.footer__grid {
+  padding: 0 var(--padding-horizontal);
+}
+
+.social-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .footer__contacts-phone {
   color: inherit;
   text-decoration: none;
@@ -213,7 +312,24 @@ img {
   line-height: 1;
 }
 
+.partners__link {
+  display: block;
+  width: fit-content;
+}
+
+.partners__link--htmlacademy img {
+  width: 115px;
+  height: 33px;
+}
+
 /* хлебные крошки */
+.breadcrumb {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
 .breadcrumb__link {
   color: inherit;
   text-decoration: none;
@@ -223,6 +339,7 @@ img {
 
 /* фильтры */
 .filter {
+  padding: 0 var(--padding-horizontal);
   background-image: url(../images/bg-filter.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -231,31 +348,126 @@ img {
   background-color: #2a3c46;
 }
 
-.filter__label {
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--padding-horizontal);
+}
+
+.form__group {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form__legend {
+  padding: 0;
+}
+
+.form__group:has(.form__legend--price) {
+  margin-left: auto;
+}
+
+.form__label {
   font-size: 18px;
   line-height: 23px;
 }
 
 /* каталог */
+.catalog__header {
+  padding: 0 var(--padding-horizontal);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--padding-horizontal);
+}
+
+.catalog__title {
+  margin-right: auto;
+}
+
+.catalog__view {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0 var(--padding-horizontal);
+  list-style-type: none;
+}
+
 /* карточки товара */
+.card {
+  padding: 0 20px;
+}
+
+.card__header {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card__image {
+  display: block;
+  width: 300px;
+  height: 212px;
+}
+
 .card__price {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
   font-size: 18px;
   line-height: 21px;
   color: var(--text-secondary);
 }
 
+.card .button {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.card__star {
+  background-color: var(--form-elements-2);
+}
+
 .card__rating {
+  padding-left: 23px;
+  padding-right: 22px;
   font-size: 16px;
   line-height: 20px;
   color: var(--text-secondary);
+  background-color: var(--form-elements-2);
+  text-transform: uppercase;
+}
+
+/* пагинация */
+.pagination {
+  margin: 0;
+  padding: 0 var(--padding-horizontal);
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .pagination__link {
+  display: block;
+  padding: 0 16px;
+  min-width: 60px;
   background-color: var(--bg-primary);
   color: #ffffff;
   font-size: 20px;
   line-height: 36px;
   text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .pagination__link[aria-current] {

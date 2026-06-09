@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
+
   <body>
 
     <div class="container">
@@ -31,7 +33,10 @@
 
         <div class="header__links">
           <a href="#">Поиск</a>
-          <a href="#">Избранное</a>
+          <a href="#">
+            Избранное
+            <span>12</span>
+          </a>
         </div>
 
         <div class="header__buttons">
@@ -103,13 +108,13 @@
 
               <label for="min_price">
                 <span class="visually-hidden">Минимальная стоимость</span>
-                <input type="number" min="0" max="100000" step="100" placeholder="Минимальная стоимость" name="min_price"
-                id="min_price" required>
+                <input type="number" min="0" max="100000" step="100" placeholder="Минимальная стоимость"
+                  name="min_price" id="min_price" required>
               </label>
               <label for="max_price">
                 <span class="visually-hidden">Максимальная стоимость</span>
-                <input type="number" min="0" max="100000" step="100" placeholder="Максимальная стоимость" name="max_price"
-                  id="max_price" required>
+                <input type="number" min="0" max="100000" step="100" placeholder="Максимальная стоимость"
+                  name="max_price" id="max_price" required>
               </label>
             </fieldset>
 
@@ -204,8 +209,8 @@
             <li class="card">
               <a class="card__header" href="#">
                 <img class="card__image" src="images/catalog/catalog-3.jpg"
-                  alt="Большой красный скалистый холм на фоне голубого неба с облаками и зеленью у подножия." width="300"
-                  height="212">
+                  alt="Большой красный скалистый холм на фоне голубого неба с облаками и зеленью у подножия."
+                  width="300" height="212">
                 <h3 class="card__title title title--small-nonecase">Desert Quail Inn</h3>
               </a>
 
@@ -318,4 +323,5 @@
       </footer>
     </div>
   </body>
+
 </html>

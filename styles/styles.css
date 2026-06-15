@@ -337,6 +337,7 @@ img {
   display: flex;
   flex-wrap: wrap;
 }
+
 .breadcrumb__link {
   color: inherit;
   text-decoration: none;

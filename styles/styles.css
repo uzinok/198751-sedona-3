@@ -30,7 +30,7 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url(../fonts/ptsans-400.woff2) format("woff2");
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
 }
 
 @font-face {
@@ -38,7 +38,7 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url(../fonts/ptsans-700.woff2) format("woff2");
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
 }
 
 /* базовые стили */
@@ -202,7 +202,7 @@ img {
 
 /* шапка мейна */
 .header-index {
-  background-image: url(../images/bg-header__index.jpg);
+  background-image: url("../images/bg-header__index.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -288,7 +288,7 @@ img {
 }
 
 .subscribe--index {
-  background-image: url(../images/bg-mailing__index.jpg);
+  background-image: url("../images/bg-mailing__index.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -348,7 +348,7 @@ img {
 /* фильтры */
 .filter {
   padding: 0 var(--padding-horizontal);
-  background-image: url(../images/bg-filter.jpg);
+  background-image: url("../images/bg-filter.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

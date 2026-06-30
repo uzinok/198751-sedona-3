@@ -289,14 +289,18 @@
       <footer class="footer" data-test="footer">
         <!-- рассылка -->
         <article class="subscribe" data-test="subscribe">
-          <hgroup class="section-header">
+
+          <hgroup class="subscribe__section-header section-header">
             <h2 class="title title--medium">Подпишитесь на рассылку</h2>
-            <p class="subtitle">Только полезная информация и никакого спама, <span class="block">честное бойскаутское!</span></p>
+            <p class="subtitle">Только полезная информация и никакого спама, <span class="block">честное
+                бойскаутское!</span></p>
           </hgroup>
-          <form action="https://echo.htmlacademy.ru/" method="post">
+
+          <form class="subscribe__form form" action="https://echo.htmlacademy.ru/" method="post">
             <label for="email" class="visually-hidden">Ваш e-mail</label>
-            <input type="email" placeholder="Ваш e-mail" name="email" id="email" required>
-            <button class="button button--secondary" type="submit">Подписаться</button>
+            <input class="subscribe__input form__input" type="email" placeholder="Ваш e-mail" name="email" id="email"
+              required>
+            <button class="subscribe__button button button--secondary" type="submit">Подписаться</button>
           </form>
         </article>
 

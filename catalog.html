@@ -40,7 +40,7 @@
         </div>
 
         <div class="header__buttons">
-          <a class="button" href="#">Хочу сюда!</a>
+          <a class="button header__button" href="#">Хочу сюда!</a>
         </div>
       </header>
 
@@ -67,58 +67,59 @@
             <h2 class="visually-hidden">Поиск по фильтрам</h2>
 
             <!-- Инфраструктура -->
-            <fieldset class="form__group">
-              <legend class="form__legend title title--smaller">Инфраструктура:</legend>
+            <fieldset class="filter__group">
+              <legend class="filter__legend title title--smaller">Инфраструктура:</legend>
 
-              <label class="form__label" for="pool">
+              <label class="filter__label" for="pool">
                 <input type="checkbox" name="pool" id="pool" checked>
                 Бассейн
               </label>
-              <label class="form__label" for="parking">
+              <label class="filter__label" for="parking">
                 <input type="checkbox" name="parking" id="parking" checked>
                 Парковка
               </label>
-              <label class="form__label" for="wi-fi">
+              <label class="filter__label" for="wi-fi">
                 <input type="checkbox" name="wi-fi" id="wi-fi">
                 Wi-Fi
               </label>
             </fieldset>
 
             <!-- Тип Жилья -->
-            <fieldset class="form__group">
-              <legend class="form__legend title title--smaller">Инфраструктура:</legend>
+            <fieldset class="filter__group filter__group--type_housing">
+              <legend class="filter__legend title title--smaller">Тип жилья:</legend>
 
-              <label class="form__label" for="hotel">
+              <label class="filter__label" for="hotel">
                 <input type="radio" name="type_housing" id="hotel" value="hotel" checked>
                 Гостиница
               </label>
-              <label class="form__label" for="motel">
+              <label class="filter__label" for="motel">
                 <input type="radio" name="type_housing" id="motel" value="motel">
                 Мотель
               </label>
-              <label class="form__label" for="apartments">
+              <label class="filter__label" for="apartments">
                 <input type="radio" name="type_housing" id="apartments" value="apartments">
                 Апартаменты
               </label>
             </fieldset>
 
             <!-- Стоимость -->
-            <fieldset class="form__group">
-              <legend class="form__legend form__legend--price title title--smaller">Стоимость, ₽:</legend>
+            <fieldset class="filter__group">
+              <legend class="filter__legend filter__legend--price title title--smaller">Стоимость, ₽:</legend>
 
               <label for="min_price">
                 <span class="visually-hidden">Минимальная стоимость</span>
-                <input type="number" min="0" max="100000" step="100" placeholder="Минимальная стоимость"
+                <input class="form__input" type="number" min="0" max="100000" step="100" placeholder="Минимальная стоимость"
                   name="min_price" id="min_price" required>
               </label>
               <label for="max_price">
                 <span class="visually-hidden">Максимальная стоимость</span>
-                <input type="number" min="0" max="100000" step="100" placeholder="Максимальная стоимость"
+                <input class="form__input" type="number" min="0" max="100000" step="100" placeholder="Максимальная стоимость"
                   name="max_price" id="max_price" required>
               </label>
             </fieldset>
 
-            <div class="form__group">
+            <!-- Кнопки фомы -->
+            <div class="filter__group filter__button-wrap">
               <button class="button button--secondary" type="submit">Применить</button>
               <button class="button button--reset" type="reset">Сбросить</button>
             </div>
@@ -132,7 +133,7 @@
 
             <label for="sort">
               <span class="visually-hidden">Сортировать по:</span>
-              <select name="sort" id="sort">
+              <select class="form__input catalog__select" name="sort" id="sort">
                 <option value="cheap">Сначала дешевые</option>
                 <option value="expensive">Сначала дорогие</option>
               </select>
@@ -163,12 +164,12 @@
           <!-- список поиска  -->
           <ul class="catalog__list">
             <li class="card">
-              <a class="card__header" href="#">
+              <a class="card__image-wrap" href="#">
                 <img class="card__image" src="images/catalog/catalog-1.jpg"
                   alt="Узкий проход между скалами, ведущий к ночному небу, усыпанному звёздами. Скалы имеют красноватый оттенок."
                   width="300" height="212">
               </a>
-              <a class="card__header" href="#">
+              <a class="card__title" href="#">
                 <h3 class="card__title title title--small-nonecase">Amara Resort & Spa</h3>
               </a>
 
@@ -177,8 +178,8 @@
                 <span>От 4000 ₽</span>
               </p>
 
-              <a class="button" href="#">Подробнее</a>
-              <button class="button button--secondary" type="button">в избранное</button>
+              <a class="card__button button" href="#">Подробнее</a>
+              <button class="card__button button button--secondary" type="button">в избранное</button>
 
               <span class="card__star">
                 <span class="visually-hidden">Четыре звезды</span>
@@ -187,12 +188,12 @@
               <span class="card__rating">Рейтинг: 8,5</span>
             </li>
             <li class="card">
-              <a class="card__header" href="#">
+              <a class="card__image-wrap" href="#">
                 <img class="card__image" src="images/catalog/catalog-2.jpg"
                   alt="Горы, освещённые закатным солнцем, с радугой на фоне тёмных облаков и зелёными деревьями у подножия."
                   width="300" height="212">
               </a>
-              <a class="card__header" href="#">
+              <a class="card__title" href="#">
                 <h3 class="card__title title title--small-nonecase">Villas at Poco Diablo</h3>
               </a>
 
@@ -201,8 +202,8 @@
                 <span>От 5000 ₽</span>
               </p>
 
-              <a class="button" href="#">Подробнее</a>
-              <button class="button button--selected" type="button">в избранном</button>
+              <a class="card__button button" href="#">Подробнее</a>
+              <button class="card__button button button--selected" type="button">в избранном</button>
 
               <span class="card__star">
                 <span class="visually-hidden">Четыре звезды</span>
@@ -211,12 +212,12 @@
               <span class="card__rating">Рейтинг: 9,2</span>
             </li>
             <li class="card">
-              <a class="card__header" href="#">
+              <a class="card__image-wrap" href="#">
                 <img class="card__image" src="images/catalog/catalog-3.jpg"
                   alt="Большой красный скалистый холм на фоне голубого неба с облаками и зеленью у подножия."
                   width="300" height="212">
               </a>
-              <a class="card__header" href="#">
+              <a class="card__title" href="#">
                 <h3 class="card__title title title--small-nonecase">Desert Quail Inn</h3>
               </a>
 
@@ -225,8 +226,8 @@
                 <span>От 2500 ₽</span>
               </p>
 
-              <a class="button" href="#">Подробнее</a>
-              <button class="button button--secondary" type="button">в избранном</button>
+              <a class="card__button button" href="#">Подробнее</a>
+              <button class="card__button button button--secondary" type="button">в избранном</button>
 
               <span class="card__star">
                 <span class="visually-hidden">Три звезды</span>
@@ -235,12 +236,12 @@
               <span class="card__rating">Рейтинг: 6,9</span>
             </li>
             <li class="card">
-              <a class="card__header" href="#">
+              <a class="card__image-wrap" href="#">
                 <img class="card__image" src="images/catalog/catalog-4.jpg"
                   alt="Освещённый скалистый утёс на фоне ночного звёздного неба с оранжевым оттенком у горизонта."
                   width="300" height="212">
               </a>
-              <a class="card__header" href="#">
+              <a class="card__title" href="#">
                 <h3 class="card__title title title--small-nonecase">GreenTree Inn</h3>
               </a>
 
@@ -249,8 +250,8 @@
                 <span>От 1500 ₽</span>
               </p>
 
-              <a class="button" href="#">Подробнее</a>
-              <button class="button button--secondary" type="button">в избранном</button>
+              <a class="card__button button" href="#">Подробнее</a>
+              <button class="card__button button button--secondary" type="button">в избранном</button>
 
               <span class="card__star">
                 <span class="visually-hidden">Две звезды</span>
@@ -275,7 +276,7 @@
               <a class="pagination__link" href="./catalog.html">4</a>
             </li>
             <li>
-              <span>...</span>
+              <span class="pagination__link">...</span>
             </li>
             <li value="10">
               <a class="pagination__link" href="./catalog.html">10</a>
@@ -324,11 +325,23 @@
           </section>
 
           <!-- партнёры -->
-          <section class="partners">
+          <section class="footer__partners">
             <h2 class="visually-hidden">Партнёры</h2>
 
-            <a class="partners__link partners__link--htmlacademy" href="https://htmlacademy.ru/intensive/htmlcss">
-              <svg role="img" aria-label="HTML Academy" width="115" height="33" viewBox="0 0 115 33" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill="#000"><path d="M0 12.9v2.6h2.5v-2.6h-2.5Zm11.6-8.4c-1.6 0-2.8.7-3.6 1.7h-.1v-6.2h-2v15.5h2v-5.3c0-2.1 1.3-3.6 3.3-3.6 1.8 0 2.9 1.4 2.9 3.2v5.7h2v-6.1c.1-3-1.8-4.9-4.5-4.9Zm15 .3h-4.8v-3.7h-2v3.8h-1.9v2h1.9v6c0 1.7 1 2.7 2.7 2.7h4.1v-2h-3.7c-.7 0-1.1-.4-1.1-1.1v-5.7h4.8v-2Zm14.5-.2c-1.6 0-2.9.8-3.5 2.1h-.1c-.6-1.2-1.8-2.1-3.4-2.1-1.4 0-2.5.8-3.1 1.8h-.1v-1.6h-1.9v10.6h2v-5.4c0-2 1-3.5 2.6-3.5 1.5 0 2.4 1 2.4 2.6v6.3h2v-5.6c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 2.4 2.6v6.3h2v-6.5c.1-2.5-1.4-4.3-3.9-4.3Zm6.7 8.1c0 1.7 1 2.7 2.8 2.7h2v-2h-1.7c-.7 0-1.1-.4-1.1-1.1v-12.3h-2v12.7Zm-18.9 7c-.9-1.1-2.2-1.8-3.9-1.8-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 3-.8 3.8-1.9h.1v1.6h2v-10.6h-2v1.5Zm-3.6 7.4c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c0 1.9-1.4 3.6-3.6 3.6Zm18.9-5.1c-.5-2.4-2.6-4.1-5.4-4.1a5.4 5.4 0 0 0-5.6 5.6c0 3.1 2.2 5.6 5.6 5.6 2.8 0 4.9-1.8 5.4-4.2h-2.1a3.4 3.4 0 0 1-3.3 2.3c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6c1.6 0 2.8 1 3.3 2.2h2.1v-.2Zm10.9-2.3c-.9-1.1-2.2-1.8-3.9-1.8-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 3-.8 3.8-1.9h.1v1.6h2v-10.6h-2v1.5Zm-3.6 7.4c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c0 1.9-1.5 3.6-3.6 3.6Zm17.2-7.3c-.9-1.1-2.2-1.9-3.9-1.9-3.1 0-5.4 2.3-5.4 5.6s2.2 5.6 5.4 5.6c1.7 0 3-.8 3.8-1.8h.1v1.5h2v-15.4h-2v6.4Zm-3.6 7.3c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c-.1 2-1.5 3.6-3.6 3.6Zm13.2-9.2c-3.3 0-5.5 2.5-5.5 5.6 0 3 2.1 5.6 5.5 5.6 2.5 0 4.5-1.3 5.2-3.6h-2.1c-.5 1-1.6 1.6-3 1.6-1.9 0-3.3-1.3-3.4-2.9h8.8c.2-3.6-2-6.3-5.5-6.3Zm0 1.9c1.7 0 3 1 3.3 2.6h-6.5c.3-1.5 1.5-2.6 3.2-2.6Zm19.9-1.9c-1.6 0-2.9.8-3.6 2h-.1c-.6-1.2-1.8-2-3.4-2-1.4 0-2.5.7-3.1 1.8v-1.5h-1.9v10.6h2v-5.4c0-2 1-3.4 2.6-3.5 1.5 0 2.4 1 2.4 2.6v6.3h2v-5.6c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 2.4 2.6v6.3h2v-6.5c.1-2.6-1.4-4.4-3.9-4.4Zm11.2 9.1-3.6-8.9h-2.2l4.8 11.6c-.3.9-.7 1.2-1.7 1.2h-2.5v2h2.5c1.8 0 2.8-.8 3.5-2.6l4.7-12.2h-2.1l-3.4 8.9Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h115v33h-115z"/></clipPath></defs></svg>
+            <a class="footer__partners-link footer__partners-link--htmlacademy"
+              href="https://htmlacademy.ru/intensive/htmlcss">
+              <svg role="img" aria-label="HTML Academy" width="115" height="33" viewBox="0 0 115 33" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)" fill="#000">
+                  <path
+                    d="M0 12.9v2.6h2.5v-2.6h-2.5Zm11.6-8.4c-1.6 0-2.8.7-3.6 1.7h-.1v-6.2h-2v15.5h2v-5.3c0-2.1 1.3-3.6 3.3-3.6 1.8 0 2.9 1.4 2.9 3.2v5.7h2v-6.1c.1-3-1.8-4.9-4.5-4.9Zm15 .3h-4.8v-3.7h-2v3.8h-1.9v2h1.9v6c0 1.7 1 2.7 2.7 2.7h4.1v-2h-3.7c-.7 0-1.1-.4-1.1-1.1v-5.7h4.8v-2Zm14.5-.2c-1.6 0-2.9.8-3.5 2.1h-.1c-.6-1.2-1.8-2.1-3.4-2.1-1.4 0-2.5.8-3.1 1.8h-.1v-1.6h-1.9v10.6h2v-5.4c0-2 1-3.5 2.6-3.5 1.5 0 2.4 1 2.4 2.6v6.3h2v-5.6c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 2.4 2.6v6.3h2v-6.5c.1-2.5-1.4-4.3-3.9-4.3Zm6.7 8.1c0 1.7 1 2.7 2.8 2.7h2v-2h-1.7c-.7 0-1.1-.4-1.1-1.1v-12.3h-2v12.7Zm-18.9 7c-.9-1.1-2.2-1.8-3.9-1.8-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 3-.8 3.8-1.9h.1v1.6h2v-10.6h-2v1.5Zm-3.6 7.4c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c0 1.9-1.4 3.6-3.6 3.6Zm18.9-5.1c-.5-2.4-2.6-4.1-5.4-4.1a5.4 5.4 0 0 0-5.6 5.6c0 3.1 2.2 5.6 5.6 5.6 2.8 0 4.9-1.8 5.4-4.2h-2.1a3.4 3.4 0 0 1-3.3 2.3c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6c1.6 0 2.8 1 3.3 2.2h2.1v-.2Zm10.9-2.3c-.9-1.1-2.2-1.8-3.9-1.8-3.1 0-5.4 2.3-5.4 5.6s2.3 5.6 5.4 5.6c1.8 0 3-.8 3.8-1.9h.1v1.6h2v-10.6h-2v1.5Zm-3.6 7.4c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c0 1.9-1.5 3.6-3.6 3.6Zm17.2-7.3c-.9-1.1-2.2-1.9-3.9-1.9-3.1 0-5.4 2.3-5.4 5.6s2.2 5.6 5.4 5.6c1.7 0 3-.8 3.8-1.8h.1v1.5h2v-15.4h-2v6.4Zm-3.6 7.3c-2.2 0-3.6-1.6-3.6-3.6s1.4-3.6 3.6-3.6 3.6 1.6 3.6 3.6c-.1 2-1.5 3.6-3.6 3.6Zm13.2-9.2c-3.3 0-5.5 2.5-5.5 5.6 0 3 2.1 5.6 5.5 5.6 2.5 0 4.5-1.3 5.2-3.6h-2.1c-.5 1-1.6 1.6-3 1.6-1.9 0-3.3-1.3-3.4-2.9h8.8c.2-3.6-2-6.3-5.5-6.3Zm0 1.9c1.7 0 3 1 3.3 2.6h-6.5c.3-1.5 1.5-2.6 3.2-2.6Zm19.9-1.9c-1.6 0-2.9.8-3.6 2h-.1c-.6-1.2-1.8-2-3.4-2-1.4 0-2.5.7-3.1 1.8v-1.5h-1.9v10.6h2v-5.4c0-2 1-3.4 2.6-3.5 1.5 0 2.4 1 2.4 2.6v6.3h2v-5.6c0-2.4 1.4-3.3 2.6-3.3 1.5 0 2.4 1 2.4 2.6v6.3h2v-6.5c.1-2.6-1.4-4.4-3.9-4.4Zm11.2 9.1-3.6-8.9h-2.2l4.8 11.6c-.3.9-.7 1.2-1.7 1.2h-2.5v2h2.5c1.8 0 2.8-.8 3.5-2.6l4.7-12.2h-2.1l-3.4 8.9Z" />
+                </g>
+                <defs>
+                  <clipPath id="a">
+                    <path fill="#fff" d="M0 0h115v33h-115z" />
+                  </clipPath>
+                </defs>
+              </svg>
             </a>
           </section>
         </div>

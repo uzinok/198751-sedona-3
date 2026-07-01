@@ -96,6 +96,7 @@ img {
 }
 
 .title--big {
+  margin-bottom: 8px;
   font-size: 60px;
   line-height: 78px;
   text-transform: uppercase;
@@ -143,8 +144,9 @@ img {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: var(--bg-button-primary);
   text-transform: uppercase;
+  text-align: center;
+  background-color: var(--bg-button-primary);
   border-radius: 4px;
   border: 0;
 }
@@ -163,33 +165,6 @@ img {
 
 .button--reset {
   background-color: transparent;
-}
-
-.form {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* align-items: flex-start; */
-  /* gap: var(--padding-horizontal); */
-}
-
-.form__group {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.form__legend {
-  padding: 0;
-}
-
-.form__group:has(.form__legend--price) {
-  margin-left: auto;
-}
-
-.form__label {
-  font-size: 18px;
-  line-height: 23px;
 }
 
 .form__input {
@@ -460,7 +435,7 @@ img {
 /* хлебные крошки */
 .breadcrumb {
   padding: 0;
-  margin: 0;
+  margin: 0 0 40px;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -475,7 +450,7 @@ img {
 
 /* фильтры */
 .filter {
-  padding: 0 var(--padding-horizontal);
+  padding: 35px var(--padding-horizontal) 70px;
   background-image: url("../images/bg-filter.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -484,9 +459,48 @@ img {
   background-color: #2a3c46;
 }
 
+.filter__form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--padding-horizontal);
+}
+
+.filter__group {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  max-width: 200px;
+  border: 0;
+}
+
+.filter__group--type_housing {
+  margin-right: auto;
+}
+
+.filter__legend {
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.filter__label {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.filter__label:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.filter__button-wrap {
+  padding-top: 56px;
+  display: grid;
+  gap: 32px;
+}
+
 /* каталог */
 .catalog__header {
-  padding: 0 var(--padding-horizontal);
+  padding: 50px var(--padding-horizontal) 40px;
   display: flex;
   align-items: flex-start;
   gap: var(--padding-horizontal);
@@ -494,6 +508,25 @@ img {
 
 .catalog__title {
   margin-right: auto;
+  margin-bottom: 0;
+}
+
+.catalog__select {
+  min-width: 292px;
+  height: 49px;
+  padding: 14px 60px 14px 20px;
+  box-sizing: border-box;
+  background-color: var(--bg-basic);
+  border: 1px solid var(--form-elements-1);
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  font-family: inherit;
+  appearance: none;
+  background-image: url("../images/icons/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 8px;
+  background-position: right 20px center;
 }
 
 .catalog__view {
@@ -506,26 +539,49 @@ img {
 }
 
 .catalog__list {
-  margin: 0;
+  margin: 0 0 40px;
   padding: 0 var(--padding-horizontal);
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 /* карточки товара */
 .card {
-  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px;
+  align-items: start;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
 }
 
-.card__header {
+.card__image-wrap {
   display: block;
   color: inherit;
   text-decoration: none;
+  grid-column: 1 / -1;
 }
 
 .card__image {
   display: block;
   width: 300px;
   height: 212px;
+}
+
+.card__title {
+  display: block;
+  margin: 0;
+  color: inherit;
+  grid-column: 1 / -1;
+  text-decoration: none;
+}
+
+.card__price {
+  margin: 0;
+  grid-column: 1 / -1;
 }
 
 .card__price {
@@ -537,9 +593,10 @@ img {
   color: var(--text-secondary);
 }
 
-.card .button {
-  padding-left: 25px;
-  padding-right: 25px;
+.card__button {
+  min-width: initial;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card__star {
@@ -547,8 +604,11 @@ img {
 }
 
 .card__rating {
-  padding-left: 23px;
+  padding-top: 9px;
   padding-right: 22px;
+  padding-bottom: 8px;
+  padding-left: 23px;
+  padding: 9px 20px 8px 23px;
   font-size: 16px;
   line-height: 20px;
   color: var(--text-secondary);
@@ -568,15 +628,22 @@ img {
 
 .pagination__link {
   display: block;
-  padding: 0 16px;
+  padding: 12px 16px;
   min-width: 60px;
+  height: 60px;
+  box-sizing: border-box;
   background-color: var(--bg-primary);
   color: #ffffff;
   font-size: 20px;
   line-height: 36px;
+  font-weight: 700;
   text-decoration: none;
   text-align: center;
-  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+span.pagination__link {
+  background-color: transparent;
 }
 
 .pagination__link[aria-current] {

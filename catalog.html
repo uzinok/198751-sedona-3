@@ -55,7 +55,7 @@
           <!-- хлебные крошки -->
           <ol class="breadcrumb">
             <li class="breadcrumb__item">
-              <a href="index.html" class="breadcrumb__link-home">
+              <a href="index.html" class="breadcrumb__link breadcrumb__link--home">
                 <span class="visually-hidden">Главная</span>
               </a>
             </li>
@@ -73,15 +73,15 @@
               <legend class="filter__legend title title--smaller">Инфраструктура:</legend>
 
               <label class="filter__label" for="pool">
-                <input type="checkbox" name="pool" id="pool" checked>
+                <input class="filter__checkbox" type="checkbox" name="pool" id="pool" checked>
                 Бассейн
               </label>
               <label class="filter__label" for="parking">
-                <input type="checkbox" name="parking" id="parking" checked>
+                <input class="filter__checkbox" type="checkbox" name="parking" id="parking" checked>
                 Парковка
               </label>
               <label class="filter__label" for="wi-fi">
-                <input type="checkbox" name="wi-fi" id="wi-fi">
+                <input class="filter__checkbox" type="checkbox" name="wi-fi" id="wi-fi">
                 Wi-Fi
               </label>
             </fieldset>
@@ -91,33 +91,44 @@
               <legend class="filter__legend title title--smaller">Тип жилья:</legend>
 
               <label class="filter__label" for="hotel">
-                <input type="radio" name="type_housing" id="hotel" value="hotel" checked>
+                <input class="filter__radio" type="radio" name="type_housing" id="hotel" value="hotel" checked>
                 Гостиница
               </label>
               <label class="filter__label" for="motel">
-                <input type="radio" name="type_housing" id="motel" value="motel">
+                <input class="filter__radio" type="radio" name="type_housing" id="motel" value="motel">
                 Мотель
               </label>
               <label class="filter__label" for="apartments">
-                <input type="radio" name="type_housing" id="apartments" value="apartments">
+                <input class="filter__radio" type="radio" name="type_housing" id="apartments" value="apartments">
                 Апартаменты
               </label>
             </fieldset>
 
             <!-- Стоимость -->
-            <fieldset class="filter__group">
+            <fieldset class="filter__group filter__group--price">
               <legend class="filter__legend filter__legend--price title title--smaller">Стоимость, ₽:</legend>
 
-              <label for="min_price">
-                <span class="visually-hidden">Минимальная стоимость</span>
-                <input class="form__input" type="number" min="0" max="100000" step="100"
-                  placeholder="Минимальная стоимость" name="min_price" id="min_price" required>
+              <label class="filter__price-label" for="min_price">
+                <span class="visually-hidden">Минимальная</span>
+                <input class="form__input filter__input filter__input--min" type="number" min="0" max="100000" placeholder="Мин. цена" name="min_price" id="min_price" value="0" required>
+                <span class="filter__price-text">от</span>
               </label>
-              <label for="max_price">
-                <span class="visually-hidden">Максимальная стоимость</span>
-                <input class="form__input" type="number" min="0" max="100000" step="100"
-                  placeholder="Максимальная стоимость" name="max_price" id="max_price" required>
+              <label class="filter__price-label" for="max_price">
+                <span class="visually-hidden">Максимальная</span>
+                <input class="form__input filter__input filter__input--max" type="number" min="0" max="100000" placeholder="Макс. цена" name="max_price" id="max_price" value="9000" required>
+                <span class="filter__price-text">до</span>
               </label>
+
+              <div class="filter__range-scale">
+                <div class="filter__range-bar">
+                  <button type="button" class="filter__range-toggle">
+                    <span class="visually-hidden">Минимальная цена</span>
+                  </button>
+                  <button type="button" class="filter__range-toggle">
+                    <span class="visually-hidden">Максимальная цена</span>
+                  </button>
+                </div>
+              </div>
             </fieldset>
 
             <!-- Кнопки фомы -->

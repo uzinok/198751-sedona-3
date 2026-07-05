@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
+
   <body>
 
     <div class="container">
@@ -92,7 +94,8 @@
             </li>
             <li class="advantages__item">
               <div class="advantages__card">
-                <h3 class="advantages__title title title--small title--line">Мало <span class="block">туристов</span></h3>
+                <h3 class="advantages__title title title--small title--line">Мало <span class="block">туристов</span>
+                </h3>
                 <p class="advantages__subtitle">Большинство едет в Гранд Каньон и толпится там</p>
               </div>
             </li>
@@ -101,11 +104,12 @@
                 alt="Скалистый пейзаж с красными горами и утёсами. Видны зелёные деревья и кустарники. Вдали — горы и небо."
                 width="800" height="385">
               <div class="advantages__card">
-                <h3 class="advantages__title title title--small title--line">Там есть <span class="block">мост дьявола</span></h3>
+                <h3 class="advantages__title title title--small title--line">Там есть <span class="block">мост
+                    дьявола</span></h3>
                 <p class="advantages__subtitle">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
-              </li>
-            </ul>
+            </li>
+          </ul>
         </section>
 
         <!-- сервис -->
@@ -150,7 +154,8 @@
           <hgroup class="search__section-header section-header">
             <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
             <p class="title title--medium">Заинтересовались?</p>
-            <p class="subtitle">Укажите предполагаемые даты поездки, <span class="block">и мы покажем вам лучшие предложения гостиниц в Седоне</span></p>
+            <p class="subtitle">Укажите предполагаемые даты поездки, <span class="block">и мы покажем вам лучшие
+                предложения гостиниц в Седоне</span></p>
           </hgroup>
 
           <!-- Кнопка открывает модальное окно -->
@@ -165,7 +170,8 @@
 
           <hgroup class="subscribe__section-header section-header">
             <h2 class="title title--medium">Подпишитесь на рассылку</h2>
-            <p class="subtitle">Только полезная информация и никакого спама, <span class="block">честное бойскаутское!</span></p>
+            <p class="subtitle">Только полезная информация и никакого спама, <span class="block">честное
+                бойскаутское!</span></p>
           </hgroup>
 
           <form class="subscribe__form form" action="https://echo.htmlacademy.ru/" method="post">
@@ -193,7 +199,8 @@
                 </a>
               </li>
               <li>
-                <a class="social-list__icon social-list__icon--youtube" href="https://www.youtube.com/user/htmlacademyru">
+                <a class="social-list__icon social-list__icon--youtube"
+                  href="https://www.youtube.com/user/htmlacademyru">
                   <span class="visually-hidden">ЮТуб</span>
                 </a>
               </li>
@@ -230,5 +237,77 @@
         </div>
       </footer>
     </div>
+
+    <!-- модальное окно -->
+    <div class="modal modal-overlay">
+      <div class="modal__window">
+
+        <header class="modal__header">
+          <h2 class="modal__title title title--medium">Поиск гостиницы в Седоне</h2>
+          <button class="modal__close-button" type="button">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </header>
+
+        <form class="modal__form form">
+
+          <div class="modal__label modal__label--date">
+            <label class="modal__label-text" for="check-in-date">Дата Заезда:</label>
+            <input type="text" id="check-in-date" class="form__input modal__input modal__input--date"
+              value="27 апреля 2020" placeholder="Выберите дату">
+            <div class="modal__input-message">
+              <div class="error-message">Мы не можем отправить вас в прошлое.</div>
+            </div>
+          </div>
+
+          <div class="modal__label modal__label--date">
+            <label class="modal__label-text" for="check-out-date">Дата Выезда:</label>
+            <input type="text" id="check-out-date" class="form__input modal__input modal__input--date"
+              value="1 сентября 2023" placeholder="Выберите дату">
+            <div class="modal__input-message">
+              <div class="additional-info">На эти даты есть свободные номера. Пока есть.</div>
+            </div>
+          </div>
+
+          <div class="modal__label modal__label--counter">
+            <label class="modal__label-text" for="adults-count">Взрослые:</label>
+            <div class="modal__counter-controls">
+              <button type="button" class="modal__counter-button modal__counter-minus">
+                <span class="visually-hidden">Уменьшить количество гостей</span>
+              </button>
+              <input type="number" class="form__input modal__input modal__input--counter" id="adults-count" value="2" min="1">
+              <button type="button" class="modal__counter-button modal__counter-plus">
+                <span class="visually-hidden">Увеличить количество гостей</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="modal__label modal__label--counter modal__label--children">
+            <label class="modal__label-text" for="children-count">
+              Дети:
+              <button type="button" class="modal__children-count-info info">
+                <span class="visually-hidden">Информация о детях</span>
+                <span class="info__text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+              </button>
+            </label>
+            <div class="modal__counter-controls">
+              <button type="button" class="modal__counter-button modal__counter-minus">
+                <span class="visually-hidden">Уменьшить количество детей</span>
+              </button>
+              <input type="number" class="form__input modal__input modal__input--counter" id="children-count" value="2"
+                min="0">
+              <button type="button" class="modal__counter-button modal__counter-plus">
+                <span class="visually-hidden">Увеличить количество детей</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">Найти</button>
+
+        </form>
+      </div>
+    </div>
+
   </body>
+
 </html>

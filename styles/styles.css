@@ -1322,6 +1322,7 @@ span.pagination__link {
   /* align-items: center; */
   align-items: start;
   justify-content: center;
+  display: none;
 }
 
 .modal__window {

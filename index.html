@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Academy: Седона</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/png">
   </head>
 
   <body>
@@ -249,12 +251,12 @@
           </button>
         </header>
 
-        <form class="modal__form form">
+        <form class="modal__form form" action="https://echo.htmlacademy.ru/" method="post">
 
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-in-date">Дата Заезда:</label>
-            <input type="text" id="check-in-date" class="form__input modal__input modal__input--date"
-              value="27 апреля 2020" placeholder="Выберите дату">
+            <input class="form__input modal__input modal__input--date" type="text" id="check-in-date"
+              name="check-in-date" value="27 апреля 2020" placeholder="Выберите дату">
             <div class="modal__input-message">
               <div class="error-message">Мы не можем отправить вас в прошлое.</div>
             </div>
@@ -262,8 +264,8 @@
 
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-out-date">Дата Выезда:</label>
-            <input type="text" id="check-out-date" class="form__input modal__input modal__input--date"
-              value="1 сентября 2023" placeholder="Выберите дату">
+            <input class="form__input modal__input modal__input--date" type="text" id="check-out-date"
+              name="check-out-date" value="1 сентября 2023" placeholder="Выберите дату">
             <div class="modal__input-message">
               <div class="additional-info">На эти даты есть свободные номера. Пока есть.</div>
             </div>
@@ -275,7 +277,8 @@
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество гостей</span>
               </button>
-              <input type="number" class="form__input modal__input modal__input--counter" id="adults-count" value="2" min="1">
+              <input class="form__input modal__input modal__input--counter" type="number" name="adults-count"
+                id="adults-count" value="2" min="1">
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество гостей</span>
               </button>
@@ -283,26 +286,26 @@
           </div>
 
           <div class="modal__label modal__label--counter modal__label--children">
-            <label class="modal__label-text" for="children-count">
-              Дети:
+            <div class="modal__label-text">
+              <label for="children-count">Дети:</label>
               <button type="button" class="modal__children-count-info info">
                 <span class="visually-hidden">Информация о детях</span>
                 <span class="info__text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
               </button>
-            </label>
+            </div>
             <div class="modal__counter-controls">
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество детей</span>
               </button>
-              <input type="number" class="form__input modal__input modal__input--counter" id="children-count" value="2"
-                min="0">
+              <input class="form__input modal__input modal__input--counter" type="number" name="children-count"
+                id="children-count" value="2" min="0">
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество детей</span>
               </button>
             </div>
           </div>
 
-          <button type="submit" class="submit-button">Найти</button>
+          <button type="submit" class="modal__form-button button button--secondary">Найти</button>
 
         </form>
       </div>

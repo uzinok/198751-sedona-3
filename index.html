@@ -258,7 +258,7 @@
 
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-in-date">Дата Заезда:</label>
-            <input class="form__input modal__input modal__input--date" type="text" id="check-in-date" name="check-in-date" value="27 апреля 2020" placeholder="Выберите дату">
+            <input class="form__input modal__input modal__input--date" type="text" id="check-in-date" name="check-in-date" value="27 апреля 2020" placeholder="Выберите дату" required>
             <div class="modal__input-message">
               <div class="error-message">Мы не можем отправить вас в прошлое.</div>
             </div>
@@ -266,7 +266,7 @@
 
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-out-date">Дата Выезда:</label>
-            <input class="form__input modal__input modal__input--date" type="text" id="check-out-date" name="check-out-date" value="1 сентября 2023" placeholder="Выберите дату">
+            <input class="form__input modal__input modal__input--date" type="text" id="check-out-date" name="check-out-date" value="1 сентября 2023" placeholder="Выберите дату" required>
             <div class="modal__input-message">
               <div class="additional-info">На эти даты есть свободные номера. Пока есть.</div>
             </div>
@@ -278,7 +278,7 @@
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество гостей</span>
               </button>
-              <input class="form__input modal__input modal__input--counter" type="number" name="adults-count" id="adults-count" value="2" min="1">
+              <input class="form__input modal__input modal__input--counter" type="number" name="adults-count" id="adults-count" value="2" min="1" required>
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество гостей</span>
               </button>
@@ -297,7 +297,7 @@
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество детей</span>
               </button>
-              <input class="form__input modal__input modal__input--counter" type="number" name="children-count" id="children-count" value="2" min="0">
+              <input class="form__input modal__input modal__input--counter" type="number" name="children-count" id="children-count" value="2" min="0" required>
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество детей</span>
               </button>

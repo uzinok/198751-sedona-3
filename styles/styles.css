@@ -227,7 +227,6 @@ img {
 .button--reset {
   color: inherit;
   background-color: transparent;
-  border: 3px solid transparent;
 }
 
 .button--reset:not(:disabled):hover {
@@ -238,7 +237,6 @@ img {
 .button--reset:not(:disabled):focus {
   color: var(--button-text-hover, rgba(255, 255, 255, 30%));
   background-color: transparent;
-  border: 3px solid var(--background-button-secondary, #82b3d3);
 }
 
 .button--reset:not(:disabled):active {
@@ -1184,10 +1182,6 @@ img {
 
 .catalog__view-link:hover {
   border-color: var(--icon-basic, #000000);
-}
-
-.catalog__view-link:focus {
-  border-color: var(--icon-secondary-hover, #68a2ca);
 }
 
 .catalog__view-link::before {

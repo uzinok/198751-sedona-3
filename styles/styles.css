@@ -318,6 +318,7 @@ img {
 
 .form__select:disabled {
   opacity: 30%;
+  border-color: var(--text-primary, #000000);
 }
 
 /* шапка сайта */
@@ -1301,7 +1302,7 @@ img {
 .card__star {
   display: flex;
   align-items: center;
-  width: 105px;
+  width: 112px;
   height: 36px;
 }
 
@@ -1315,6 +1316,10 @@ img {
   mask-size: contain;
 }
 
+.card__star--5::before {
+  width: 112px;
+}
+
 .card__star--4::before {
   width: 90px;
 }
@@ -1325,6 +1330,10 @@ img {
 
 .card__star--2::before {
   width: 42px;
+}
+
+.card__star--1::before {
+  width: 20px;
 }
 
 .card__rating {

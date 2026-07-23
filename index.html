@@ -175,8 +175,8 @@
             </p>
           </hgroup>
 
-          <!-- Кнопка открывает модальное окно -->
-          <button class="search__button button" type="button">Поиск гостиницы в седоне</button>
+          <!-- Кнопка открывает модальное окно. Есть простой скрипт -->
+          <button class="search__button button js-modal-open" type="button">Поиск гостиницы в седоне</button>
         </section>
       </main>
 
@@ -244,12 +244,12 @@
     </div>
 
     <!-- модальное окно -->
-    <div class="modal modal-overlay">
+    <div class="modal">
       <div class="modal__window">
 
         <header class="modal__header">
           <h2 class="modal__title title title--medium">Поиск гостиницы в Седоне</h2>
-          <button class="modal__close-button" type="button">
+          <button class="modal__close-button js-modal-close" type="button">
             <span class="visually-hidden">Закрыть</span>
           </button>
         </header>
@@ -259,17 +259,13 @@
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-in-date">Дата Заезда:</label>
             <input class="form__input modal__input modal__input--date" type="text" id="check-in-date" name="check-in-date" value="27 апреля 2020" placeholder="Выберите дату" required>
-            <div class="modal__input-message">
-              <div class="error-message">Мы не можем отправить вас в прошлое.</div>
-            </div>
+            <p class="error-message">Мы не можем отправить вас в прошлое.</p>
           </div>
 
           <div class="modal__label modal__label--date">
             <label class="modal__label-text" for="check-out-date">Дата Выезда:</label>
             <input class="form__input modal__input modal__input--date" type="text" id="check-out-date" name="check-out-date" value="1 сентября 2023" placeholder="Выберите дату" required>
-            <div class="modal__input-message">
-              <div class="additional-info">На эти даты есть свободные номера. Пока есть.</div>
-            </div>
+            <p class="additional-info">На эти даты есть свободные номера. Пока есть.</p>
           </div>
 
           <div class="modal__label modal__label--counter">
@@ -278,7 +274,7 @@
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество гостей</span>
               </button>
-              <input class="form__input modal__input modal__input--counter" type="number" name="adults-count" id="adults-count" value="2" min="1" required>
+              <input class="form__input modal__input modal__input--counter" type="number" name="adults-count" id="adults-count" value="2" min="1" max="99" required>
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество гостей</span>
               </button>
@@ -297,7 +293,7 @@
               <button type="button" class="modal__counter-button modal__counter-minus">
                 <span class="visually-hidden">Уменьшить количество детей</span>
               </button>
-              <input class="form__input modal__input modal__input--counter" type="number" name="children-count" id="children-count" value="2" min="0" required>
+              <input class="form__input modal__input modal__input--counter" type="number" name="children-count" id="children-count" value="2" min="0" max="99" required>
               <button type="button" class="modal__counter-button modal__counter-plus">
                 <span class="visually-hidden">Увеличить количество детей</span>
               </button>
@@ -309,6 +305,8 @@
         </form>
       </div>
     </div>
+
+    <script src="./scripts/main.js"></script>
 
   </body>
 

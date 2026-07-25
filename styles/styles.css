@@ -331,6 +331,7 @@ img {
 .logo {
   position: relative;
   display: block;
+  flex-shrink: 0;
   width: 140px;
   height: 64px;
   margin-right: 28px;
@@ -429,6 +430,7 @@ img {
 
 .header__button {
   display: block;
+  max-width: 200px;
   margin: 14px 0;
 }
 
@@ -605,10 +607,6 @@ img {
 
 .advantages__title {
   margin-bottom: 30px;
-}
-
-.services__item-title {
-  margin-bottom: 20px;
 }
 
 .advantages__subtitle {
@@ -802,11 +800,6 @@ img {
   fill: currentColor;
 }
 
-.partners__link--htmlacademy img {
-  width: 115px;
-  height: 33px;
-}
-
 /* хлебные крошки */
 .breadcrumb {
   --breadcrumb-gap: 10px;
@@ -932,6 +925,7 @@ img {
 
 .filter__checkbox {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 20px;
@@ -961,6 +955,7 @@ img {
 
 .filter__radio {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 20px;
@@ -1151,7 +1146,7 @@ img {
 
 .catalog__select {
   box-sizing: border-box;
-  min-width: 292px;
+  width: 292px;
 }
 
 .catalog__view {
@@ -1222,6 +1217,7 @@ img {
   display: grid;
   align-items: start;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto;
   padding: 19px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
@@ -1337,13 +1333,14 @@ img {
 }
 
 .card__rating {
-  padding: 9px 20px 8px 23px;
+  padding: 9px 17px 8px 20px;
   padding-top: 9px;
   padding-right: 22px;
   padding-bottom: 8px;
   padding-left: 23px;
   font-size: 16px;
   line-height: 20px;
+  text-align: center;
   color: var(--text-secondary, #333333);
   text-transform: uppercase;
   background-color: var(--form-elements-2, #f2f2f2);
@@ -1377,33 +1374,21 @@ img {
   transition: background-color var(--transition-duration, 150ms) var(--transition-function, ease-in-out), color var(--transition-duration, 150ms) var(--transition-function, ease-in-out);
 }
 
-.pagination__link[href]:hover {
+.pagination__link[href]:not([aria-current]):hover {
   background-color: var(--background-button-secondary-hover, #68a2ca);
 }
 
-.pagination__link[href]:focus {
+.pagination__link[href]:not([aria-current]):focus {
   background-color: var(--background-button-secondary-hover, #68a2ca);
 }
 
-.pagination__link[href]:active {
+.pagination__link[href]:not([aria-current]):active {
   color: var(--button-text-hover, rgba(255, 255, 255, 30%));
 }
 
 .pagination__link[aria-current] {
   color: var(--text-primary, #000000);
   background-color: var(--form-elements-2, #f2f2f2);
-}
-
-.pagination__link[aria-current]:hover {
-  background-color: var(--form-elements-1, #e5e5e5);
-}
-
-.pagination__link[aria-current]:focus {
-  background-color: var(--form-elements-1, #e5e5e5);
-}
-
-.pagination__link[aria-current]:active {
-  color: rgba(0, 0, 0, 30%);
 }
 
 span.pagination__link {
@@ -1463,15 +1448,19 @@ span.pagination__link {
   appearance: none;
 }
 
-.modal__close-button:hover {
+.modal__close-button:disabled {
+  opacity: 15%;
+}
+
+.modal__close-button:not(:disabled):hover {
   background-color: var(--form-elements-1, #e5e5e5);
 }
 
-.modal__close-button:focus {
+.modal__close-button:not(:disabled):focus {
   background-color: var(--form-elements-1, #e5e5e5);
 }
 
-.modal__close-button:active::before {
+.modal__close-button:not(:disabled):active::before {
   opacity: 30%;
 }
 
@@ -1552,7 +1541,7 @@ span.pagination__link {
   grid-column-start: 2;
   margin: 0;
   padding-left: 20px;
-  color: var(--error-message, #ff5757);
+  color: var(--text-error, #ff5757);
 }
 
 .additional-info {
@@ -1583,15 +1572,19 @@ span.pagination__link {
   appearance: none;
 }
 
-.modal__counter-button:hover {
+.modal__counter-button:disabled::before {
+  opacity: 15%;
+}
+
+.modal__counter-button:not(:disabled):hover {
   background-color: var(--form-elements-1, #e5e5e5);
 }
 
-.modal__counter-button:focus {
+.modal__counter-button:not(:disabled):focus {
   background-color: var(--form-elements-1, #e5e5e5);
 }
 
-.modal__counter-button:active::before {
+.modal__counter-button:not(:disabled):active::before {
   opacity: 30%;
 }
 

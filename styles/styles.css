@@ -1139,6 +1139,7 @@ img {
 
 .catalog__title {
   margin: 6px auto 6px 0;
+  max-width: 468px;
 }
 
 .catalog__select {
@@ -1147,6 +1148,7 @@ img {
 }
 
 .catalog__view {
+  width: 160px;
   display: flex;
   flex-wrap: wrap;
   margin: 0;

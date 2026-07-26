@@ -1005,15 +1005,12 @@ img {
 }
 
 .filter__input {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
-.filter__input {
   box-sizing: border-box;
   width: 100%;
   padding: 12px 40px 12px 20px;
   font-weight: 700;
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 .filter__input--min {
@@ -1276,13 +1273,10 @@ img {
 }
 
 .card__price {
-  grid-column: 1 / -1;
-  margin: 0;
-}
-
-.card__price {
   display: flex;
   justify-content: space-between;
+  grid-column: 1 / -1;
+  margin: 0;
   font-size: 18px;
   line-height: 21px;
   color: var(--text-secondary, #333333);
@@ -1625,6 +1619,8 @@ span.pagination__link {
   padding-left: 0;
   text-align: center;
   border-radius: 0;
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 .modal__input--counter::-webkit-inner-spin-button,
@@ -1632,11 +1628,6 @@ span.pagination__link {
   margin: 0;
   appearance: none;
   -webkit-appearance: none;
-}
-
-.modal__input--counter {
-  appearance: textfield;
-  -moz-appearance: textfield;
 }
 
 .info {
